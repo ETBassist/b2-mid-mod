@@ -2,8 +2,17 @@ require 'rails_helper'
 
 describe 'When I visit a parks show page' do
   describe 'I see details about' do
-    xit
+    before :each do
+      @park = Park.create!(name: 'Cedar Rapids', price: 25.0)
+      @ride1 = @park.rides.create!(name: 'Lightning Racer', thrill_rating: 10)
+      @ride2 = @park.rides.create!(name: 'Storm Runner', thrill_rating: 5)
+    end
+
     it 'the name and price of admissions for that amusement park' do
+      visit "/parks/#{@park.id}"
+
+      expect(page).to have_content(@park.name)
+      expect(page).to have_content(@park.price)
     end
   end
 end
