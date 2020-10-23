@@ -27,6 +27,11 @@ describe 'When I go to a mechanics show page' do
       expect(current_path).to eq("/mechanics/#{@mechanic.id}")
 
       expect(page).to have_content(@ride1.name)
+
+      fill_in(:ride_id, with: @ride2.id)
+      click_button("Submit")
+
+      expect(page).to have_content(@ride2.name)
     end
   end
 end

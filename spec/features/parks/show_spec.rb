@@ -11,7 +11,6 @@ describe 'When I visit a parks show page' do
     it 'the name and price of admissions for that amusement park' do
       visit "/parks/#{@park.id}"
 
-      save_and_open_page
       expect(page).to have_content(@park.name)
       expect(page).to have_content(@park.price)
     end
