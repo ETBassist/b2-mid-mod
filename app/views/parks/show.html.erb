@@ -2,3 +2,8 @@
   <h1><%= @park.name %></h1>
   <p>Admissions: $<%= @park.price %>
 </header>
+<body>
+  <% @park.rides.each do |ride| %>
+    <%= ride.name %>
+  <% end %>
+</body>

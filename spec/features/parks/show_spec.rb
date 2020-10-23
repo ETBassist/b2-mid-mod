@@ -20,7 +20,7 @@ describe 'When I visit a parks show page' do
 
       expect(page).to have_content(@ride1.name)
       expect(page).to have_content(@ride2.name)
-      expect(page).to have_content((@ride1.thrill_rating + @ride2.thrill_rating) / 2)
+      expect(page).to have_content((@ride1.thrill_rating + @ride2.thrill_rating) / 2.0)
     end
   end
 end
