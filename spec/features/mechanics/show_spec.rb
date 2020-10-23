@@ -4,7 +4,7 @@ describe 'When I go to a mechanics show page' do
   describe 'I see details about' do
     before :each do
       park = Park.create(name: 'Great America', price: 25.0)
-      @mechanic = park.mechanics.create(name: 'Kara Smith',
+      @mechanic = Mechanic.create!(name: 'Kara Smith',
                                        years_experience: 11)
       @ride1 = park.rides.create!(name: 'Storm Runner',
                                   thrill_rating: 10)

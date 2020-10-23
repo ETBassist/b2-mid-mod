@@ -9,8 +9,6 @@ describe Ride, type: :model do
   describe 'class methods' do
     it 'can sort rides by name' do
       park = Park.create(name: 'Great America', price: 25.0)
-      park.mechanics.create(name: 'Kara Smith',
-                                       years_experience: 11)
       ride1 = park.rides.create!(name: 'Storm Runner',
                                   thrill_rating: 5)
       ride2 = park.rides.create!(name: 'Lightning Racer',

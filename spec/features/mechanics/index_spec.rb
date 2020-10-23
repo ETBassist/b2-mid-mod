@@ -3,12 +3,11 @@ require 'rails_helper'
 describe 'When I visit a mechanics index page' do
   describe 'I see a header saying All Mechanics' do
     it 'and I see a list of all mechanics and their years experience' do
-      park = Park.create!(name: 'Disneyland')
-      mechanic1 = park.mechanics.create(name: 'Jim Jones',
+      mechanic1 = Mechanic.create!(name: 'Jim Jones',
                             years_experience: 10)
-      mechanic2 = park.mechanics.create(name: 'George Gin',
+      mechanic2 = Mechanic.create!(name: 'George Gin',
                             years_experience: 5)
-      mechanic3 = park.mechanics.create(name: 'Petra Perogi',
+      mechanic3 = Mechanic.create!(name: 'Petra Perogi',
                             years_experience: 1)
 
       visit '/mechanics'
