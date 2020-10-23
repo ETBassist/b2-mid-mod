@@ -6,9 +6,9 @@ describe 'When I go to a mechanics show page' do
       park = Park.create(name: 'Great America', price: 25.0)
       @mechanic = park.mechanics.create(name: 'Kara Smith',
                                        years_experience: 11)
-      @ride1 = park.rides.create!(name: 'Lightning Racer',
+      @ride1 = park.rides.create!(name: 'Storm Runner',
                                   thrill_rating: 10)
-      @ride2 = park.rides.create!(name: 'Storm Runner',
+      @ride2 = park.rides.create!(name: 'Lightning Racer',
                                   thrill_rating: 5)
     end
 
@@ -32,6 +32,10 @@ describe 'When I go to a mechanics show page' do
       click_button("Submit")
 
       expect(page).to have_content(@ride2.name)
+      within("#mechanic-rides") do
+        expect(page.all("li")[0]).to have_content(@ride2.name)
+        expect(page.all("li")[1]).to have_content(@ride1.name)
+      end
     end
   end
 end
