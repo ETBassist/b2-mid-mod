@@ -18,5 +18,15 @@ describe 'When I go to a mechanics show page' do
       expect(page).to have_content(@mechanic.name)
       expect(page).to have_content(@mechanic.years_experience)
     end
+
+    it 'a form to add rides to that mechanics work load' do
+      visit "/mechanics/#{@mechanic.id}"
+
+      fill_in(:ride_id, with: @ride1.id)
+      click_button("Submit")
+      expect(current_path).to eq("/mechanics/#{@mechanic.id}")
+
+      expect(page).to have_content(@ride1.name)
+    end
   end
 end
