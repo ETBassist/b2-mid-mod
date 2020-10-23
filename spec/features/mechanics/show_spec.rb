@@ -33,6 +33,7 @@ describe 'When I go to a mechanics show page' do
 
       expect(page).to have_content(@ride2.name)
       within("#mechanic-rides") do
+        expect(page).to have_content("Current rides they're working on:")
         expect(page.all("li")[0]).to have_content(@ride2.name)
         expect(page.all("li")[1]).to have_content(@ride1.name)
       end

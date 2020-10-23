@@ -3,6 +3,7 @@
   <p><%= @mechanic.years_experience %></p>
 </header>
 <div id="mechanic-rides">
+  <p>Current rides they're working on:</p>
   <ul>
   <% @mechanic.rides.by_name.each do |ride| %>
     <li>
