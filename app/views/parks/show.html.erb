@@ -1,6 +1,6 @@
 <header>
   <h1><%= @park.name %></h1>
-  <p>Admissions: <%= number_to_currency(@park.price) %>
+  <p>Admissions: <%= number_to_currency(@park.price) %></p>
 </header>
 <body>
   <% @park.rides.each do |ride| %>
